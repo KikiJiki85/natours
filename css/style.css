@@ -107,24 +107,26 @@ body {
 
 .btn--animated {
   animation: moveInTop 0.7s ease-out 0.75s;
-  animation-fill-mode: backwards; }
+  animation-fill-mode: backwards;
+  align-self: center; }
 
 .header {
   height: 95vh;
   background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
   background-size: cover;
   background-position: top;
-  position: relative;
-  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); }
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
   .header__logo-box {
-    position: absolute;
-    top: 4rem;
-    left: 4rem; }
+    margin-top: 3rem;
+    margin-left: 3rem;
+    align-self: flex-start; }
   .header__logo {
     height: 3.5rem; }
   .header__text-box {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center; }
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 35rem; }
