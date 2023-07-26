@@ -1,0 +1,61 @@
+.features {
+    padding: 20rem 0;
+    background-image: linear-gradient(to right bottom,
+            rgba($color-primary-light, 0.8),
+            rgba($color-primary-dark, 0.8)),
+        url(../img/nat-4.jpg);
+    background-size: cover;
+    background-position: top;
+    padding-left: 10rem;
+    padding-right: 10rem;
+    margin-top: -9rem;
+
+    transform: skewY(-6deg);
+
+    &__list {
+        @include reset-list;
+        display: flex;
+        justify-content: space-between;
+        transform: skewY(6deg);
+
+    }
+
+    &__item {
+        flex-basis: 20%;
+
+        padding: 12rem 2.5rem 2.5rem;
+        font-size: 1.5rem;
+        text-align: center;
+
+        border-radius: 0.3rem;
+        box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+
+        transition: all 0.3s;
+
+        background-color: rgba(255, 255, 255, 0.8);
+        background-repeat: no-repeat;
+        background-position: 50% 1.5rem;
+        background-size: 8rem;
+
+        &:hover {
+            transform: translateY(-1.5rem) scale(1.03);
+        }
+
+        &--1 {
+            background-image: url(../../img/basic_world.svg);
+        }
+
+        &--2 {
+            background-image: url(../../img/basic_compass.svg);
+        }
+
+        &--3 {
+            background-image: url(../../img/basic_map.svg);
+        }
+
+        &--4 {
+            background-image: url(../../img/basic_heart.svg);
+        }
+    }
+
+}
