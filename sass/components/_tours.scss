@@ -10,61 +10,104 @@
         @include reset-list;
         margin-top: 5rem;
     }
+}
 
-    &__card {
-        flex-basis: 20%;
-        perspective: 150rem;
-        -moz-perspective: 150rem;
-        font-size: 2rem;
-        position: relative;
-        height: 50rem;
+.card {
+    flex-basis: 25%;
+    perspective: 150rem;
+    -moz-perspective: 150rem;
+    font-size: 2rem;
+    position: relative;
+    height: 52rem;
+    border: 1px solid orange;
 
-        &-side {
-            min-height: 20rem;
-            transition: all 0.8s ease;
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            backface-visibility: hidden;
-            border-radius: 3px;
-            box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+    &__side {
+        min-height: 52rem;
+        transition: all 0.8s ease;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        backface-visibility: hidden;
+        border-radius: 3px;
+        box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+        overflow: hidden;
+        background-size: cover;
+        background-blend-mode: screen;
+        color: #ffffff;
 
-            &--1 {
-                background-color: #ffffff;
-            }
+        &--1 {
 
-            &--2 {
-                transform: rotateY(180deg);
+            // clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+            background-image: linear-gradient(to right bottom,
+                    rgba($color-secondary-light, 0.8),
+                    rgba($color-secondary-dark, 0.8)), url(../img/nat-5.jpg);
 
-                &1 {
-                    background-image: linear-gradient(to right bottom,
-                            rgba($color-secondary-light, 0.8),
-                            rgba($color-secondary-dark, 0.8));
-                }
+            padding-top: 10rem;
+            padding-right: 0.5rem;
 
-                &2 {
-                    background-image: linear-gradient(to right bottom,
-                            rgba($color-primary-light, 0.8),
-                            rgba($color-primary-dark, 0.8));
-                }
-
-                &3 {
-                    background-image: linear-gradient(to right bottom,
-                            rgba($color-tertiary-light, 0.8),
-                            rgba($color-tertiary-dark, 0.8));
-                }
-            }
         }
 
-        &:hover &-side--1 {
+        &--2 {
             transform: rotateY(180deg);
+
+            &1 {
+                background-image: linear-gradient(to right bottom,
+                        rgba($color-secondary-light, 0.8),
+                        rgba($color-secondary-dark, 0.8));
+            }
+
+            &2 {
+                background-image: linear-gradient(to right bottom,
+                        rgba($color-primary-light, 0.8),
+                        rgba($color-primary-dark, 0.8));
+            }
+
+            &3 {
+                background-image: linear-gradient(to right bottom,
+                        rgba($color-tertiary-light, 0.8),
+                        rgba($color-tertiary-dark, 0.8));
+            }
         }
+    }
 
-        &:hover &-side--2 {
-            transform: rotateY(0);
+    &:hover &__side--1 {
+        transform: rotateY(-180deg);
+    }
+
+    &:hover &__side--2 {
+        transform: rotateY(0);
+    }
+
+    &__heading {
+        font-size: 2.8rem;
+        font-weight: 300;
+        text-transform: uppercase;
+        text-align: right;
+    }
+
+    &__heading-span {
+        padding: 1rem 1.5rem;
+        -webkit-box-decoration-break: clone;
+        box-decoration-break: clone;
+
+        &--1 {
+            background-image: linear-gradient(to right bottom, rgba($color-secondary-light, .85), rgba($color-secondary-dark, .85));
         }
+    }
 
+    &__list {
+        @include reset-list;
+    }
 
+    &__line {
+        font-size: 1.5rem;
+        padding: 1rem;
+        width: 80%;
+        margin: 0 auto;
+
+        &:not(:last-child) {
+            border-bottom: 1px solid #eee;
+        }
     }
 }
