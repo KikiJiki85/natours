@@ -190,7 +190,7 @@ body {
 .tours {
   text-align: center;
   background-color: #f7f7f7;
-  padding: 25rem 10rem 50rem;
+  padding: 25rem 10rem 10rem;
   margin-top: -10rem; }
   .tours__list {
     display: flex;
@@ -198,7 +198,8 @@ body {
     list-style: none;
     margin: 0;
     padding: 0;
-    margin-top: 5rem; }
+    margin-top: 5rem;
+    margin-bottom: 5rem; }
 
 .card {
   flex-basis: 25%;
@@ -206,10 +207,9 @@ body {
   -moz-perspective: 150rem;
   font-size: 2rem;
   position: relative;
-  height: 52rem;
-  border: 1px solid orange; }
+  min-height: 47rem; }
   .card__side {
-    min-height: 52rem;
+    height: 47rem;
     transition: all 0.8s ease;
     position: absolute;
     top: 0;
@@ -219,14 +219,27 @@ body {
     border-radius: 3px;
     box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
     overflow: hidden;
-    background-size: cover;
-    background-blend-mode: screen;
-    color: #ffffff; }
+    color: #000; }
     .card__side--1 {
-      background-image: linear-gradient(to right bottom, rgba(255, 185, 0, 0.8), rgba(255, 119, 48, 0.8)), url(../img/nat-5.jpg);
+      background-color: #ffffff; }
+    .card__side--wrapper {
+      background-size: cover;
+      background-blend-mode: screen;
+      clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
       padding-top: 10rem;
-      padding-right: 0.5rem; }
+      padding-bottom: 3rem; }
+      .card__side--wrapper1 {
+        background-image: linear-gradient(to right bottom, rgba(255, 185, 0, 0.8), rgba(255, 119, 48, 0.8)), url(../img/nat-5.jpg); }
+      .card__side--wrapper2 {
+        background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/nat-6.jpg); }
+      .card__side--wrapper3 {
+        background-image: linear-gradient(to right bottom, rgba(41, 152, 255, 0.8), rgba(86, 67, 250, 0.8)), url(../img/nat-7.jpg); }
     .card__side--2 {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6rem;
+      padding-top: 10rem;
       transform: rotateY(180deg); }
       .card__side--21 {
         background-image: linear-gradient(to right bottom, rgba(255, 185, 0, 0.8), rgba(255, 119, 48, 0.8)); }
@@ -246,9 +259,14 @@ body {
   .card__heading-span {
     padding: 1rem 1.5rem;
     -webkit-box-decoration-break: clone;
-    box-decoration-break: clone; }
+    box-decoration-break: clone;
+    color: #ffffff; }
     .card__heading-span--1 {
       background-image: linear-gradient(to right bottom, rgba(255, 185, 0, 0.85), rgba(255, 119, 48, 0.85)); }
+    .card__heading-span--2 {
+      background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.85), rgba(40, 180, 133, 0.85)); }
+    .card__heading-span--3 {
+      background-image: linear-gradient(to right bottom, rgba(41, 152, 255, 0.85), rgba(86, 67, 250, 0.85)); }
   .card__list {
     list-style: none;
     margin: 0;
@@ -260,6 +278,13 @@ body {
     margin: 0 auto; }
     .card__line:not(:last-child) {
       border-bottom: 1px solid #eee; }
+  .card__cta {
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    color: #ffffff; }
+  .card__price {
+    font-size: 6rem;
+    font-weight: 100; }
 
 .btn:link, .btn:visited {
   text-transform: uppercase;
@@ -287,6 +312,12 @@ body {
   color: #777777; }
   .btn--white::after {
     background-color: #ffffff; }
+
+.btn--green {
+  background-color: #55c57a;
+  color: #ffffff; }
+  .btn--green::after {
+    background-color: #55c57a; }
 
 .btn::after {
   content: '';
