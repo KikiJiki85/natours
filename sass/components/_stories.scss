@@ -1,0 +1,45 @@
+.stories {
+    padding: 10rem 0;
+    background-color: #eee;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: $default-font-size;
+
+    &__list {
+        @include reset-list;
+        width: 75%;
+        display: flex;
+        flex-direction: column;
+        gap: 5rem;
+        margin-top: 5rem;
+    }
+
+    &__item {
+        box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.1);
+        background-color: #fff;
+        border-radius: 3px;
+        padding: 5rem;
+        padding-left: 8rem;
+        transform: skewX(-12deg);
+    }
+
+    &__shape {
+        background-color: orange;
+        width: 15rem;
+        height: 15rem;
+        float: left;
+        shape-outside: circle(50% at 50% 50%);
+        clip-path: circle(50% at 50% 50%);
+        transform: translateX(-2rem) skewX(12deg);
+    }
+
+    &__image {
+        height: 100%;
+    }
+
+    &__text {
+        transform: skewX(12deg);
+    }
+
+}
