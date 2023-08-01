@@ -363,7 +363,8 @@ body {
     background-color: rgba(255, 255, 255, 0.5);
     border: none;
     border-bottom: 3px solid transparent;
-    width: 45%; }
+    width: 45%;
+    transition: all 0.3s; }
     .booking__input:focus {
       outline: none;
       box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
@@ -386,8 +387,44 @@ body {
     opacity: 0;
     visibility: hidden;
     transform: translateY(-4rem); }
+  .booking__radio-wrapper {
+    display: flex;
+    width: 45%;
+    margin-bottom: 4rem; }
+  .booking__radio {
+    visibility: hidden; }
+  .booking__radio-label {
+    font-size: 1.6rem;
+    cursor: pointer;
+    position: relative;
+    padding: 0 2rem; }
+    .booking__radio-label:first-of-type {
+      margin-right: 2rem; }
+  .booking__radio-button {
+    height: 3rem;
+    width: 3rem;
+    border: 5px solid #55c57a;
+    border-radius: 50%;
+    display: inline-block;
+    position: absolute;
+    left: -2rem; }
+    .booking__radio-button::after {
+      content: '';
+      height: 1.3rem;
+      width: 1.3rem;
+      display: block;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #55c57a;
+      opacity: 0;
+      transition: opacity 0.2s; }
+  .booking__radio:checked + .booking__radio-label .booking__radio-button::after {
+    opacity: 1; }
 
-.btn:link, .btn:visited {
+.btn, .btn:link, .btn:visited {
   text-transform: uppercase;
   text-decoration: none;
   padding: 1.5rem 4rem;
@@ -395,7 +432,9 @@ body {
   border-radius: 3rem;
   transition: all 0.2s;
   position: relative;
-  font-size: 1.6rem; }
+  font-size: 1.6rem;
+  border: none;
+  cursor: pointer; }
 
 .btn:hover {
   transform: translateY(-0.3rem);
