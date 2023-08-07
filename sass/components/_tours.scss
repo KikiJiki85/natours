@@ -1,11 +1,15 @@
 .tours {
     text-align: center;
     background-color: $color-bcg-tours;
-    padding: 25rem 10rem 10rem;
+    padding: 20rem 10rem 10rem;
     margin-top: -10rem;
 
     @include respond(tab-port) {
-        padding: 25rem 15rem 10rem;
+        padding: 25rem 25rem 10rem;
+    }
+
+    @include respond(phone) {
+        padding: 25rem 10rem 10rem;
     }
 
     &__list {
