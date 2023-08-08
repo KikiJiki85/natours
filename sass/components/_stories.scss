@@ -6,6 +6,8 @@
     font-size: $default-font-size;
     position: relative;
 
+
+
     &__list {
         @include reset-list;
         width: 75%;
@@ -14,7 +16,14 @@
         gap: 5rem;
         margin-top: 5rem;
         margin-bottom: 4rem;
+
+        @include respond(tab-port) {
+            width: 80%;
+        }
+
     }
+
+
 
     &__item {
         box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.1);
@@ -23,6 +32,10 @@
         padding: 5rem;
         padding-left: 8rem;
         transform: skewX(-12deg);
+
+        @include respond(phone) {
+            transform: skewX(0);
+        }
 
         &:hover .stories__caption {
             opacity: 1;
@@ -44,6 +57,10 @@
         clip-path: circle(50% at 50% 50%);
         transform: translateX(-2rem) skewX(12deg);
         position: relative;
+
+        @include respond(phone) {
+            transform: translateX(-2rem) skewX(0);
+        }
     }
 
     &__image {
@@ -54,6 +71,10 @@
 
     &__text {
         transform: skewX(12deg);
+
+        @include respond(phone) {
+            transform: skewX(0);
+        }
     }
 
     &__caption {
